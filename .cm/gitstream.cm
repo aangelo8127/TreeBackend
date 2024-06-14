@@ -19,17 +19,23 @@ automations:
           comment: |
             This PR is considered a safe change and has been automatically approved.
   check_version_change:
-    if:
-      changes:
-        files:
-          - '**'  # Esto revisará todos los archivos
-        lines:
-          - 'version: *'  # Esto buscará cambios que incluyan la propiedad 'version'
-    run:
-      - action: add-comment@v1
-        args:
-          comment: |
-            Se detectó un cambio en la propiedad 'version'.   
+      if:
+        - {{ not (changes.change_version) }}
+      run:
+        - action: add-label@v1
+          args:
+            label: "don't update version"
+            color: {{ colors.red }}
+        - action: add-comment@v1
+          args:
+            comment: |
+              In this PR the version is not updated,
+              Please update version.
+
+  # Custom Expressions
+
+changes:
+  change_version: {{source.diff.files | filter(attr='original_file', regex=r/pom\.xml$/) | map(attr='diff') | includes(regex=r/\+[\s]*[\",\']*[\s]*version/)}}
 # These custom expressions are used in the safe_changes automation
 is:
   formatting: {{ source.diff.files | isFormattingChange }}
