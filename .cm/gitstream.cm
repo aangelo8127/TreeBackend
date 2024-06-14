@@ -24,7 +24,7 @@ automations:
         files:
           - '**.xml'  # Esto revisará todos los archivos XML
         lines:
-          - '<version> *'  # Esto buscará cambios que incluyan la propiedad 'version'
+          - '*<version>*</version>*'  # Esto buscará cambios que incluyan el tag 'version' en formato XML
     run:
       - action: add-comment@v1
         args:
