@@ -22,9 +22,9 @@ automations:
     if:
       changes:
         files:
-          - '**'  # Esto revisará todos los archivos
+          - '**.xml'  # Esto revisará todos los archivos XML
         lines:
-          - 'version: *'  # Esto buscará cambios que incluyan la propiedad 'version'
+          - '<version> *'  # Esto buscará cambios que incluyan la propiedad 'version'
     run:
       - action: add-comment@v1
         args:
