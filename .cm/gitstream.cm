@@ -18,6 +18,18 @@ automations:
         args:
           comment: |
             This PR is considered a safe change and has been automatically approved.
+  check_version_change:
+    if:
+      changes:
+        files:
+          - '**'  # Esto revisará todos los archivos
+        lines:
+          - 'version: *'  # Esto buscará cambios que incluyan la propiedad 'version'
+    run:
+      - action: add-comment@v1
+        args:
+          comment: |
+            Se detectó un cambio en la propiedad 'version'.   
 # These custom expressions are used in the safe_changes automation
 is:
   formatting: {{ source.diff.files | isFormattingChange }}
