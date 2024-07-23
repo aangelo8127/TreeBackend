@@ -35,7 +35,7 @@ automations:
   # Custom Expressions
 
 changes:
-  change_version: {{source.diff.files | filter(attr='original_file', regex=r'.*\.java$') | map(attr='diff') | includes(regex=r'//.*eslint-disable.*')}}
+  change_version: {{source.diff.files | filter(attr='original_file', regex=r/.*\.java$/) | map(attr='diff') | includes(regex=r/eslint-disable/)}}
 # These custom expressions are used in the safe_changes automation
 is:
   formatting: {{ source.diff.files | isFormattingChange }}
