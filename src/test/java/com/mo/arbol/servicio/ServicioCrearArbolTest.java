@@ -1,6 +1,6 @@
 package com.mo.arbol.servicio;
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
