@@ -8,6 +8,8 @@ import com.mo.dominio.puerto.repositorio.RepositorioArbol;
 
 @Service
 public class ServicioCrearArbol {
+
+	/* eslint-disable @typescript-eslint/no-unused-vars */
 	
 	private static final String EL_NODO_YA_SE_ENCUENTRA_CREADO = "El nodo ya se encuentra creado para el arbol";
 	private static final String EL_ARBOL_ES_BINARIO = "El arbol es binario un nodo no puede tener mas de 2 hijos";
