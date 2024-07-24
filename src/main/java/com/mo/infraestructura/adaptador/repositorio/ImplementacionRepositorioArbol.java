@@ -8,7 +8,7 @@ public class ImplementacionRepositorioArbol implements RepositorioArbol{
 	
 	private final RepositorioArbolH2 repositorioArbolH2;
 
-	/* eslint-disable @typescript-eslint/no-unused-vars */
+	/* eslint-disable @typescript-eslint/no-unused-vars  */
 	
 	public ImplementacionRepositorioArbol(RepositorioArbolH2 repositorioArbolH2) {
 		this.repositorioArbolH2 = repositorioArbolH2;
