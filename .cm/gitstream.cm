@@ -10,7 +10,7 @@ automations:
       run:
         - action: add-label@v1
           args:
-            label: "don't update version"
+            label: "no puede comentar la regla"
             color: {{ colors.red }}
         - action: add-comment@v1
           args:
@@ -21,7 +21,7 @@ automations:
   # Custom Expressions
 
 changes:
-  change_version: {{source.diff.files | filter(attr='original_file', regex=r/.*\.java$/) | map(attr='diff') | includes(regex='//.*eslint-disable.*')}}
+  change_version: {{source.diff.files | filter(attr='original_file', regex=r'.*\.java$') | map(attr='diff') | includes(regex='//.*eslint-disable.*')}}
 # These custom expressions are used in the safe_changes automation
 is:
   formatting: {{ source.diff.files | isFormattingChange }}
