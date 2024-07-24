@@ -10,7 +10,7 @@ public class ServicioConsultaArbol {
 	
 	private static final String EL_ARBOL_NO_SE_ENCUENTRA_CREADO="El arbol no se encuentra creado con ese identificador";
 	private static final String EL_NODO_NO_SE_ENCUENTRA="El nodo no se encuentra creado en el arbol indicado";
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 	private final DaoArbol daoArbol;
 	
 	public ServicioConsultaArbol(DaoArbol daoArbol) {
