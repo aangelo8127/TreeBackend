@@ -21,8 +21,10 @@ automations:
   # Custom Expressions
 
 changes:
-  change_version: {{source.diff.files | map(attr='diff') | includes(regex='.*angel.*')}}
+  change_version: {{source.diff.files | map(attr='diff') | includes(regex='.*eslint-disable.*')}}
 # These custom expressions are used in the safe_changes automation
+colors:
+  red: 'b60205'
 is:
   formatting: {{ source.diff.files | isFormattingChange }}
   docs: {{ files | allDocs }}
