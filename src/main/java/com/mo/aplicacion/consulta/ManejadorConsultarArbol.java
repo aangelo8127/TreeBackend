@@ -7,7 +7,9 @@ import com.mo.dominio.servicio.ServicioConsultaArbol;
 
 @Component
 public class ManejadorConsultarArbol {
-	
+
+	/* eslint-disable @typescript-eslint/no-unused-vars */
+
 	@Autowired
 	private ServicioConsultaArbol servicioConsultaArbol;
 	
