@@ -21,7 +21,7 @@ automations:
   # Custom Expressions
 
 changes:
-  change_version: {{source.diff.files | map(attr='diff') | includes(regex='//.*main.*')}}
+  change_version: {{source.diff.files | map(attr='diff') | includes(regex='//.*angel.*')}}
 # These custom expressions are used in the safe_changes automation
 is:
   formatting: {{ source.diff.files | isFormattingChange }}
