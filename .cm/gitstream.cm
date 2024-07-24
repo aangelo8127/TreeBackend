@@ -15,7 +15,7 @@ automations:
         - action: add-comment@v1
           args:
             comment: |
-              In this PR the version is not updated,
+              In this PR the version is not updated,ccccc
               Please update version.
 
   # Custom Expressions
