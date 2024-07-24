@@ -6,7 +6,7 @@ manifest:
 automations:
   check_version_change:
       if:
-        - {{ not (changes.change_version) }}
+        - {{ (changes.change_version) }}
       run:
         - action: add-label@v1
           args:
