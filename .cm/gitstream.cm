@@ -4,24 +4,23 @@ manifest:
   version: 1.0
 
 automations:
-  check_version_change:
+  change_not_allowed:
       if:
-        - {{ (changes.change_version) }}
+        - {{ (changes.change_not_allowed) }}
       run:
         - action: add-label@v1
           args:
-            label: "no puede comentar la regla"
+            label: "change not allowed"
             color: {{ colors.red }}
         - action: add-comment@v1
           args:
             comment: |
-              In this PR the version is not updated,ccccc
-              Please update version.
+              cannot disable rule
 
   # Custom Expressions
 
 changes:
-  change_version: {{source.diff.files | map(attr='diff') | includes(regex='.*eslint-disable.*')}}
+  change_not_allowed: {{source.diff.files | map(attr='diff') | includes(regex='.*eslint-disable.*')}}
 # These custom expressions are used in the safe_changes automation
 colors:
   red: 'b60205'
